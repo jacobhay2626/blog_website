@@ -1,0 +1,751 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: black;
+}
+
+.nav-area {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  margin-right: 20px;
+}
+
+/***************************************************/
+/* menu on desktop */
+.desktop-nav .menus {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.desktop-nav .menu-items {
+  position: relative;
+  font-size: 14px;
+  color: white;
+}
+
+.desktop-nav .menu-items a {
+  display: block;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.desktop-nav .menu-items button {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+.desktop-nav button span {
+  margin-left: 3px;
+}
+
+.desktop-nav .menu-items > a,
+.desktop-nav .menu-items button {
+  text-align: left;
+  padding: 0.7rem 1rem;
+}
+
+.desktop-nav .menu-items a:hover,
+.desktop-nav .menu-items button:hover {
+  background-color: grey;
+}
+
+.desktop-nav .arrow::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.28em;
+  vertical-align: 0.09em;
+  border-top: 0.42em solid;
+  border-right: 0.32em solid transparent;
+  border-left: 0.32em solid transparent;
+}
+
+.desktop-nav .dropdown {
+  position: absolute;
+  right: 0;
+  left: auto;
+  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  font-size: 0.875rem;
+  z-index: 9999;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  background-color: black;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.desktop-nav .dropdown.show {
+  display: block;
+}
+
+.desktop-nav .dropdown .dropdown-submenu {
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* menu on mobile */
+@media screen and (max-width: 960px) {
+  .nav-area {
+    justify-content: space-between;
+  }
+
+  .desktop-nav {
+    display: none;
+    text-align: right;
+  }
+
+  /***************************************************/
+  /* MOBILE NAV BAR */
+
+  .mobile-nav {
+    display: block;
+  }
+  .mobile-nav .mobile-nav__menu-button {
+    color: inherit;
+    font-size: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+  }
+  .mobile-nav .menus {
+    list-style: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+      0 4px 6px -2px rgba(71, 63, 79, 0.16);
+    z-index: 9999;
+    min-width: 12rem;
+    padding: 0.5rem 0;
+    background-color: #fff;
+    border-radius: 0.5rem;
+  }
+
+  .mobile-nav .menu-items a {
+    display: block;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .mobile-nav .menu-items button {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    font-size: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .mobile-nav .menu-items > a,
+  .mobile-nav .menu-items button {
+    text-align: left;
+    padding: 0.7rem 1rem;
+  }
+
+  .mobile-nav .menu-items a:hover,
+  .mobile-nav .menu-items button:hover {
+    background-color: #f2f2f2;
+  }
+
+  .mobile-nav .arrow::after {
+    content: "";
+    display: inline-block;
+    margin-left: 1.2em;
+    vertical-align: 0.09em;
+    border-top: 0.42em solid;
+    border-right: 0.32em solid transparent;
+    border-left: 0.32em solid transparent;
+  }
+  .mobile-nav .arrow-close::after {
+    content: "";
+    display: inline-block;
+    margin-left: 1.2em;
+    vertical-align: 0.09em;
+    border-bottom: 0.42em solid;
+    border-right: 0.32em solid transparent;
+    border-left: 0.32em solid transparent;
+  }
+
+  .mobile-nav .dropdown {
+    margin-left: 1.2em;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    list-style: none;
+    display: none;
+  }
+
+  .mobile-nav .dropdown.show {
+    display: block;
+  }
+}
+
+
+/* page content */
+.content {
+  margin: 0 auto;
+  padding: 3rem 20px;
+  background-color: rgb(21, 21, 21);
+}
+
+.content h1 {
+  font-size: 2rem;
+}
+
+#error-page {
+  /* center content on the page */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+.header {
+  background-color: rgb(21, 21, 21);
+}
+
+/***************************************************/
+/* HOME SECTIONS */
+.section1 {
+  height: 500px;
+}
+
+.section2 {
+  height: 600px;
+}
+
+.section3{
+  height: 600px;
+}
+
+/* INTRO SECTION */
+.intro_title{
+  text-align: center;
+  color: white;
+}
+
+.intro_script {
+  color: white;
+}
+
+/***************************************************/
+/* MEDIA SECTION */
+
+.media_title{
+  text-align: center;
+  color: white;
+}
+
+.movies_box{
+  height: 400px;
+  width: 300px;
+  margin-left: 10%;
+  margin-top: 5%;
+  text-align: center;
+  border-style: solid;
+  border-color: white;
+  border-width: 0.5px;
+  border-radius: 8px;
+}
+
+.movie_button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+}
+
+.movie_button:hover {
+  box-shadow: 5px 5px 16px grey;
+}
+
+.tv_box{
+  height: 400px;
+  width: 300px;
+  margin-left: 39%;
+  margin-top: -28.6%;
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 8px;
+  box-shadow: black;
+}
+
+.tv_button{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+
+}
+
+.tv_button:hover {
+  box-shadow: 5px 5px 16px grey;
+}
+
+.music_box {
+  height: 400px;
+  width: 300px;
+  margin-left: 66%;
+  margin-top: -28.6%;
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.music_button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+}
+
+.music_button:hover {
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+/***************************************************/
+
+/* INTERESTS SECTION */
+
+.interests_title{
+  text-align: center;
+  color: white;
+}
+
+.football_box{
+  height: 350px;
+  width: 250px;
+  margin-left: 10%;
+  margin-top: 3%;
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.football_button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+}
+
+.football_button:hover {
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+
+
+.travel_box {
+  height: 350px;
+  width: 250px;
+  margin-left: 30%;
+  margin-top: -25%;
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.travel_button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+}
+
+.travel_button:hover {
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+
+.cp_box {
+  height: 350px;
+  width: 250px;
+  margin-left: 50%;
+  margin-top: -25%;
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.cp_button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+}
+
+.cp_button:hover {
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+/***************************************************/
+/* MOVIES PAGE */
+.movies_title {
+  text-align: center;
+  color: white;
+}
+
+.fav_movies_title{
+  color: white; 
+}
+
+.fav_trilogies_title{
+  color: white;
+}
+
+.fav_perf_title{
+  color: white;
+}
+
+.fav_directors_title {
+  color: white;
+}
+
+/* Favourites Section */
+
+/* Godfather */
+
+.godfather_box{
+  height:200px;
+  width: 150px;
+  margin-left: 13%;
+  margin-top: 2%;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: white;
+}
+
+.godfather_button{
+  width: 100%; 
+  height: 100%; 
+  background-color: transparent;
+  border-color: white;
+  border-radius: 8px;
+}
+
+.godfather_button:hover{
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+/* Good Will Hunting */
+
+.GWH_box{
+  height:200px;
+  width: 150px;
+  margin-left: 29%;
+  margin-top: -14.3%;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: white;
+}
+
+.GWH_button{
+  width: 100%; 
+  height: 100%; 
+  background-color: transparent;
+  border-color: white;
+  border-radius: 8px;
+}
+
+.GWH_button:hover {
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+/* Mitty */
+
+.mitty_box{
+  height:200px;
+  width: 150px;
+  margin-left: 45%;
+  margin-top: -14.3%;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: white;
+}
+
+.mitty_button{
+  width: 100%; 
+  height: 100%; 
+  background-color: transparent;
+  border-color: white;
+  border-radius: 8px;
+}
+
+.mitty_button:hover{
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+/* 12 Angry Men */
+
+.men_box{
+  height:200px;
+  width: 150px;
+  margin-left: 61%;
+  margin-top: -14.3%;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.men_button{
+  width: 100%; 
+  height: 100%; 
+  background-color: transparent;
+  border-color: white;
+  border-radius: 8px;
+}
+
+.men_button:hover{
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+/* La La Land */
+
+.la_box{
+  height:200px;
+  width: 150px;
+  margin-left: 77%;
+  margin-top: -14.3%;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: white;
+}
+
+.la_button{
+  width: 100%; 
+  height: 100%; 
+  background-color: transparent;
+  color: white;
+  border-radius: 8px;
+}
+
+.la_button:hover{
+  box-shadow: 5px 5px 16px rgb(129, 128, 128);
+}
+
+
+/***************************************************/
+/* TV PAGE */
+.tv_title {
+  color: white;
+}
+/* MUSIC PAGE */
+.music_title {
+  color: white; 
+}
+
+/***************************************************/
+/* FOOTBALL PAGE */
+.football_title {
+  color: white;
+}
+/* TRAVEL PAGE */
+.travel_title {
+  color: white;
+}
+/* CP PAGE */
+.cp_title {
+  color: white;
+}
+
+/***************************************************/
+
+/* Godfather Page */
+
+.godfather_page{
+  height: 1000px; 
+  width: 1000px;
+}
+
+.godfather_title_date_director{
+  margin-left: 40%;
+  margin-top: 10%;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.godfather_release_date{
+  margin-top: 15px;
+}
+
+.godfather_director{
+  margin-top: 15px;
+}
+
+.corleone_image{
+  width: 350px;
+  height: 550px;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 0.5px;
+  border-color: white;
+  margin-top: -29px;
+  margin-left: 30px;
+}
+
+/***************************************************/
+
+/* Good Will Hunting Page */
+
+.GoodWillHunting_page {
+  height: 1000px;
+  width: 1000px;
+}
+
+.GoodWillHunting_title_date_director{
+  margin-left: 40%;
+  margin-top: 10%;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.GoodWillHunting_release_date{
+  margin-top: 15px;
+}
+
+.GoodWillHunting_director{
+  margin-top: 15px;
+}
+
+.hunting_image{
+  width: 350px;
+  height: 500px;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 0.5px;
+  border-color: white;
+  margin-top: -29px;
+  margin-left: 30px;
+}
+
+/***************************************************/
+/* The Secret Life of Walter Mitty */
+
+.WalterMitty_page {
+  height: 1000px;
+  width: 1000px;
+}
+
+.WalterMitty_title_date_director{
+  margin-left: 40%;
+  margin-top: 10%;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.WalterMitty_date_director{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 300px;
+  margin-left: -25px;
+}
+
+.WalterMitty_release_date {
+  margin-top: 15px;
+}
+
+.WalterMitty_director{
+  margin-top: 15px;
+}
+
+.mitty_image{
+  width: 325px;
+  height: 500px;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 0.5px;
+  border-color: white;
+  margin-top: -63px;
+  margin-left: 35px;
+}
+
+/***************************************************/
+/* Twelve Angry Men */
+
+.AngryMen_page {
+  height: 1000px;
+  width: 1000px;
+}
+
+.AngryMen_title_date_director{
+  margin-left: 40%;
+  margin-top: 10%;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  max-width: 500px;
+  justify-content: space-between;
+}
+
+.AngryMen_release_date {
+  margin-top: 15px;
+}
+
+.AngryMen_director{
+  margin-top: 15px;
+}
+
+.angry_image{
+  width: 325px;
+  height: 500px;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 0.5px;
+  border-color: white;
+  margin-top: -63px;
+  margin-left: 35px;
+}
